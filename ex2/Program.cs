@@ -1,48 +1,47 @@
 ﻿using System;
 
 namespace ex2
-{
-    class Program
     {
-        static void Main(string[] args)
+        class Program
         {
-            Console.WriteLine("Enter number for x value:");
-
-            int x = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter number for y value:");
-
-            int y = int.Parse(Console.ReadLine());
-
-            try
+            static void Main(string[] args)
             {
+                Console.WriteLine("Enter number for x value:");
 
-                Console.WriteLine(MyDiv(x, y));
+                int x = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter number for y value:");
+
+                int y = int.Parse(Console.ReadLine());
+
+                try
+                {
+
+                    Console.WriteLine(MyDiv(x, y));
+
+                }
+
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+
+                }
+
+                Console.ReadKey();
 
             }
 
-            catch (Exception e)
+            private static double MyDiv(int a, int b)
+
             {
 
-                Console.WriteLine(e.Message);
+                if (b == 0)
+
+                    throw new Exception("Division by zero");
+
+                return (double)a / b;
 
             }
-
-            Console.ReadKey();
-
-        }
-
-        private static double MyDiv(int a, int b)
-
-        {
-
-            if (b == 0)
-
-                throw new Exception("Division by zero");
-
-            return (double)a / b;
-
         }
     }
-    }
-}
